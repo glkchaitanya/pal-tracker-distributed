@@ -15,6 +15,8 @@ jobs:
           java-version: 11
       - name: Startup test database instance
         run: sudo service mysql start
+      - name: Change wrapper permissions
+        run:  chmod +x ./gradlew
       - name: Change create database file permissions
         run:  chmod +x databases/create_databases.sql
       - name: Create test database
